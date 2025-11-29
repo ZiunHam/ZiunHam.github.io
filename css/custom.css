@@ -1,0 +1,58 @@
+/* source/css/custom.css */
+
+/* ==================================
+   1. 背景图片固定 (不随页面滚动)
+   ================================== */
+#web_bg {
+    /* 强制背景固定 */
+    position: fixed !important;
+    z-index: -999 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-attachment: fixed !important; 
+    background-size: cover !important; 
+}
+
+/* ==================================
+   2. 文章卡片与侧边栏半透明效果
+   ================================== */
+
+/* 覆盖 Butterfly 的默认颜色变量 */
+:root {
+    /* 白天模式：白色背景，0.85 代表 85% 不透明度 */
+    --card-bg: rgba(255, 255, 255, 0.85) !important;
+}
+
+[data-theme="dark"] {
+    /* 夜间模式：深灰色背景，0.8 代表 80% 不透明度 */
+    --card-bg: rgba(30, 30, 30, 0.8) !important;
+}
+
+/* 如果你想让卡片有“毛玻璃”磨砂质感（可选，比较吃性能，不需要可删掉下面这块） */
+.card-widget, .recent-post-item, .layout > .recent-posts .recent-post-item, .layout > #page, .layout > #post, #page-header {
+    backdrop-filter: blur(5px); /* 模糊半径，数值越大越模糊 */
+    -webkit-backdrop-filter: blur(5px); /* 兼容 Safari */
+}
+
+/* source/css/custom.css 追加内容 */
+
+/* ==================================
+   3. 首页大图透明化设置
+   ================================== */
+
+/* 1. 强制去除首页顶部的背景图和颜色 */
+#page-header.full_page {
+    background: transparent !important;
+}
+
+/* 2. 去除默认的深色遮罩层 (Mask) */
+/* Butterfly 为了让白字显眼，默认加了一层黑色半透明遮罩，如果不去会导致看起来灰蒙蒙的 */
+#page-header.full_page::before {
+    background: transparent !important;
+}
+
+/* 3. (可选) 给标题和副标题加一点阴影 */
+/* 因为背景变透明了，如果你的背景图很花，白色的字可能会看不清，加个阴影更清晰 */
+#site-title, #site-subtitle {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
