@@ -1,7 +1,8 @@
+
 /* source/css/custom.css */
 
 /* ==================================
-   1. 背景图片固定 (不随页面滚动)
+   1. 背景图片固定 + 居中 (修改版)
    ================================== */
 #web_bg {
     /* 强制背景固定 */
@@ -9,8 +10,18 @@
     z-index: -999 !important;
     width: 100% !important;
     height: 100% !important;
-    background-attachment: fixed !important; 
+    
+    /* 核心修改：设置背景图位置为“正中间” */
+    background-position: center center !important; 
+    
+    /* 防止图片在屏幕太大时重复平铺 */
+    background-repeat: no-repeat !important; 
+    
+    /* 保持图片覆盖整个屏幕 (Cover模式) */
+    /* 配合 center 使用，会保证图片永远填满屏幕，多余的边缘会自动裁剪 */
     background-size: cover !important; 
+    
+    background-attachment: fixed !important; 
 }
 
 /* ==================================
