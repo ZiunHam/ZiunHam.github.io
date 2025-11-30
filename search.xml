@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一篇博客</title>
-    <url>/2025/11/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>实在被部署这玩意搞得头昏脑胀，在此感谢Gemini帮我处理了一堆报错，在部署完成前一直在鼓励我。<br>好吧我承认中间它语气看起来似乎有点瞧不起我。</p>
-<p>算是完成了好久以来的心愿，弄一个自己的博客主页，随便放点什么上来。<br>也真是不容易，刚拿到Mac就给自己强行上难度，连各种操作都是从零开始学习，牢啊牢。<br>其实也不知道之后在这上面能放些什么，随缘就好，可能依然只会写点这种b话日记。</p>
-<p>写着写着才想起来，对哦还有一些莫名其妙的灵感可以塞在这里面。<br>希望自己能坚持吧！</p>
-<p>不太会写这种东西，大致就这些，明天犒劳一下辛勤的自己（何意味）</p>
-]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-        <tag>记录</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2025/11/29/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -33,5 +17,21 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>第一篇博客</title>
+    <url>/2025/11/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>实在被部署这玩意搞得头昏脑胀，在此感谢Gemini帮我处理了一堆报错，在部署完成前一直在鼓励我。<br>好吧我承认中间它语气看起来似乎有点瞧不起我。</p>
+<p>算是完成了好久以来的心愿，弄一个自己的博客主页，随便放点什么上来。<br>也真是不容易，刚拿到Mac就给自己强行上难度，连各种操作都是从零开始学习，牢啊牢。<br>其实也不知道之后在这上面能放些什么，随缘就好，可能依然只会写点这种b话日记。</p>
+<p>写着写着才想起来，对哦还有一些莫名其妙的灵感可以塞在这里面。<br>希望自己能坚持吧！</p>
+<p>不太会写这种东西，大致就这些，明天犒劳一下辛勤的自己（何意味）</p>
+]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>记录</tag>
+      </tags>
   </entry>
 </search>

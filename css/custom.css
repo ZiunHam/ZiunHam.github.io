@@ -30,13 +30,13 @@
 
 /* 覆盖 Butterfly 的默认颜色变量 */
 :root {
-    /* 白天模式：白色背景，0.85 代表 85% 不透明度 */
-    --card-bg: rgba(255, 255, 255, 0.85) !important;
+    /* 白天模式：白色背景，0.65 代表 65% 不透明度 */
+    --card-bg: rgba(255, 255, 255, 0.65) !important;
 }
 
 [data-theme="dark"] {
-    /* 夜间模式：深灰色背景，0.8 代表 80% 不透明度 */
-    --card-bg: rgba(30, 30, 30, 0.8) !important;
+    /* 夜间模式：深灰色背景，0.8 代表 60% 不透明度 */
+    --card-bg: rgba(30, 30, 30, 0.6) !important;
 }
 
 /* 如果你想让卡片有“毛玻璃”磨砂质感（可选，比较吃性能，不需要可删掉下面这块） */
@@ -66,4 +66,128 @@
 /* 因为背景变透明了，如果你的背景图很花，白色的字可能会看不清，加个阴影更清晰 */
 #site-title, #site-subtitle {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ==================================
+   非首页头图透明化设置
+   ================================== */
+
+/* 1. 将非首页(即不包含 full_page 类的)头图背景设为透明 */
+#page-header:not(.full_page) {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* 2. 去除头图原本的黑色遮罩层（Overlay），否则会有一层半透明黑色 */
+#page-header:not(.full_page)::before {
+  background-color: transparent !important;
+}
+
+/* 3. (可选) 调整标题文字颜色 */
+/* 因为背景透明了，如果你的网页背景是浅色，原本白色的标题可能看不清 */
+/* 如果看不清，请取消下面代码的注释并修改颜色 */
+
+/*
+#page-header:not(.full_page) #page-site-info,
+#page-header:not(.full_page) #post-info {
+  color: #333 !important; 
+  text-shadow: none !important; 
+}
+*/
+#page-header:not(.full_page) #post-info {
+  /* 给文字加一点深色阴影，防止背景太花看不清字 */
+  text-shadow: 0 0 5px rgba(0,0,0,0.8) !important; 
+  color: #fff !important; /* 强制白色，或者改成 #000 黑色 */
+}
+
+/* 强制导航栏在所有页面透明 */
+#nav {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* ==================================
+   底部 Footer 透明化设置
+   ================================== */
+
+#footer {
+  /* 强制背景透明 */
+  background: transparent !important;
+  background-color: transparent !important;
+  
+  /* 如果你的底部原来有图片，加上这一行可以去掉图片 */
+  background-image: none !important; 
+}
+
+/* 如果发现底部还有一层淡淡的颜色遮罩，加上这一段 */
+#footer::before {
+  background: transparent !important;
+}
+
+/* 修改底部文字颜色 */
+#footer-wrap, 
+#footer-wrap a {
+  color: #fff !important; /* 这里改成你想要的颜色，比如 #000 是黑色，#fff 是白色 */
+}
+
+/* ==================================
+   公告栏小喇叭图标颜色修改
+   ================================== */
+
+/* 方法一：直接修改抖动图标的颜色（推荐） */
+.card-announcement-animation {
+    color: #787878 !important; /* 这里改成你想要的颜色，例如红色 #FF0000 */
+}
+/* 方法二：如果图标没有抖动，或者方法一无效，使用更通用的层级定位 */
+.card-widget.card-announcement .item-headline i {
+    color: #787878 !important; 
+}
+
+/* ==================================
+   鼠标光标自定义 (蓝色小圆点)
+   ================================== */
+/* ==================================
+   鼠标光标终极修正版
+   ================================== */
+
+/* 1. 默认状态 (应用于整个网页) */
+body {
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='1.0' fill='rgb(58, 98, 160)'/></svg>") 4 4, auto !important;
+}
+
+/* 2. 覆盖所有链接、按钮、图标的悬停状态 */
+/* 这里列出了几乎所有可能出现“小手指”的地方，并强制改为小圆点 */
+a, a:hover,
+button, button:hover,
+i, i:hover,
+.card-content, .card-content:hover,
+.item-headline, .item-headline:hover,
+#pagination .page-number,
+#pagination .extend,
+.menus_item, 
+.menus_item:hover {
+    cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' width='8px' height='8px'><circle cx='4' cy='4' r='4' opacity='0.6' fill='rgb(58, 98, 160)'/></svg>") 4 4, pointer !important;
+}
+/* ==================================
+   鼠标拖尾效果样式
+   ================================== */
+.cursor-trail {
+    position: absolute;
+    width: 6px;       /* 圆点大小 */
+    height: 6px;
+    background-color: rgb(58, 98, 160); /* 跟你鼠标一样的蓝色 */
+    border-radius: 50%; /* 变成圆形 */
+    pointer-events: none; /* 关键！让鼠标可以穿透圆点点击下面的内容 */
+    z-index: 9999;    /* 保证在最上层 */
+    opacity: 0.8;
+    transform: translate(-50%, -50%); /* 居中定位 */
+    animation: fadeOut 0.5s forwards; /* 0.5秒内消失 */
+}
+
+/* 定义消失动画：变小并变透明 */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.2);
+    }
 }
